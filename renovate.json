@@ -11,6 +11,8 @@
   "semanticCommits": "enabled",
   "semanticCommitScope": "deps",
   "semanticCommitType": "feat",
+  "osvVulnerabilityAlerts": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
   "vulnerabilityAlerts": {
     "commitMessagePrefix": "[SECURITY] ",
     "enabled": true,

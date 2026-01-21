@@ -13,8 +13,8 @@ dependencies = [
     "requests<3.0.0,>=2.32.3",
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "black<26.1.1,>=26.1.0",
     "coverage<8.0.0,>=7.6.10",
     "isort<7.0.1,>=7.0.0",
