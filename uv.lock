@@ -408,7 +408,7 @@ dev = [
 requires-dist = [
     { name = "datetime", specifier = ">=6,<6.1" },
     { name = "requests", specifier = ">=2.32.3,<3.0.0" },
-    { name = "webex-bot", specifier = ">=1.2.3,<1.2.4" },
+    { name = "webex-bot", specifier = ">=1.2.5,<1.2.6" },
 ]
 
 [package.metadata.requires-dev]
@@ -442,7 +442,7 @@ wheels = [
 
 [[package]]
 name = "webex-bot"
-version = "1.2.3"
+version = "1.2.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "backoff" },
@@ -450,9 +450,9 @@ dependencies = [
     { name = "webexpythonsdk" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/93/9b/271edb01976b0d4ab106ab2f43082458a824b261049c7c2827c78f4208f6/webex_bot-1.2.3.tar.gz", hash = "sha256:a6457c2d9c82458e924473fd1a608e799669b7360f98dbb730423f622eceff84", size = 35224, upload-time = "2026-03-04T10:56:25.237Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/40/4b/83d5d6194be4ba63bd348801a80b1ea1811c4de0b4fa1d8ea58a1fcf6703/webex_bot-1.2.5.tar.gz", hash = "sha256:cbc032aad2486ba51f125ede7e60f1216705564788c9eba59ad4c0798863b459", size = 35502, upload-time = "2026-03-06T15:21:27.668Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c4/ee/da2536fb1bb88ff6ee8c632298eb12195a74c6450d78a7d65258823cd6c1/webex_bot-1.2.3-py2.py3-none-any.whl", hash = "sha256:90a65596f43b5483d91236be6f8e44d0848e06d43edd5e6673a3559448ac012f", size = 23646, upload-time = "2026-03-04T10:56:24.247Z" },
+    { url = "https://files.pythonhosted.org/packages/ab/5e/b449eadf5fd2284686e82d51954015dd06787a443ba589f7ab98386858b5/webex_bot-1.2.5-py2.py3-none-any.whl", hash = "sha256:ddbc38053344b4437d292086a3749eccf11b176890f776320273f9aee1773428", size = 23766, upload-time = "2026-03-06T15:21:26.844Z" },
 ]
 
 [[package]]
