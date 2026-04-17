@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """Provides test cases for app/utils/helpers.py."""
 
 from app.utils.helpers import validate_email_syntax  # pragma: no cover

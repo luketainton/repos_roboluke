@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """Provides test cases for app/utils/datetime.py."""
 
 import pytest

@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # ruff: noqa: E402 pylint: disable=wrong-import-position
 
 """Provides test cases for app/utils/config.py."""
@@ -24,7 +22,7 @@ def test_config_no_admin_vars() -> None:
         os.environ[config_var] = value
 
     # needs to be imported AFTER environment variables are set
-    from app.utils.config import config  # pragma: no cover
+    from app.utils.config import config  # pragma: no cover # NOSONAR (C0415)
 
     assert config.approved_domains == []
     assert config.approved_rooms == []

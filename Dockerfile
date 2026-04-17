@@ -2,6 +2,8 @@ FROM python:3.13.12-slim
 LABEL maintainer="Luke Tainton <luke@tainton.uk>"
 USER root
 
+RUN useradd -r -s /sbin/nologin -M user
+
 ENV PYTHONPATH="/run:/usr/local/lib/python3.13/lib-dynload:/usr/local/lib/python3.13/site-packages:/usr/local/lib/python3.13"
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
 
@@ -9,7 +11,7 @@ WORKDIR /run
 
 RUN mkdir -p /.local && \
     chmod -R 777 /.local && \
-    pip install -U pip uv==0.9.21
+    pip install --no-cache-dir -U pip uv==0.9.21
 
 COPY pyproject.toml /run/pyproject.toml
 COPY uv.lock /run/uv.lock
@@ -24,3 +26,6 @@ ARG version="dev"
 ENV APP_VERSION=$version
 
 COPY app /run/app
+
+RUN chown -R user:user /run
+USER user
