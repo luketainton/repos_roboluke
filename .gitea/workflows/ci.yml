@@ -53,16 +53,17 @@ jobs:
         run: |
           uv run coverage run -m pytest -v --junitxml=testresults.xml
           uv run coverage report
-        # sed -i 's@${{ gitea.workspace }}@/github/workspace@g' coverage.xml
+          uv run coverage xml -q -o coverage.xml
+          sed -i 's@${{ gitea.workspace }}@/github/workspace@g' coverage.xml
 
       - name: Minimize uv cache
         run: uv cache prune --ci
 
-      # - name: SonarQube Scan
-      #   uses: SonarSource/sonarqube-scan-action@v5.2.0
-      #   env:
-      #     SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST_URL }}
-      #     SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v7.1.0
+        env:
+          SONAR_HOST_URL: ${{ vars.SONAR_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       # - name: Set up environment for Snyk
       #   run: |
