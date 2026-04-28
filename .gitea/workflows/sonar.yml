@@ -55,7 +55,7 @@ jobs:
         run: uv cache prune --ci
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v7.1.0
+        uses: SonarSource/sonarqube-scan-action@v7.2
         env:
           SONAR_HOST_URL: ${{ vars.SONAR_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
