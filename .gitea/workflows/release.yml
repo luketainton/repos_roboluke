@@ -20,7 +20,8 @@ jobs:
     with:
       tag: ${{ needs.tag.outputs.tag_name }}
       body: ${{ needs.tag.outputs.changelog }}
-    secrets: inherit
+    secrets:
+      ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
 
   # get_release_id:
   #   name: Get Release ID
