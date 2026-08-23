@@ -16,12 +16,25 @@ jobs:
   create_release:
     name: Create Release
     needs: tag
-    uses: https://git.tainton.uk/actions/gha-workflows/.gitea/workflows/create-release-preexisting-tag.yaml@main
-    with:
-      tag: ${{ needs.tag.outputs.tag_name }}
-      body: ${{ needs.tag.outputs.changelog }}
-    secrets:
-      ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create release
+        env:
+          TAG_NAME: ${{ needs.tag.outputs.tag_name }}
+          RELEASE_BODY: ${{ needs.tag.outputs.changelog }}
+          API_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+        run: |
+          payload=$(jq -n \
+            --arg tag_name "$TAG_NAME" \
+            --arg name "$TAG_NAME" \
+            --arg body "$RELEASE_BODY" \
+            '{tag_name: $tag_name, name: $name, body: $body}')
+          curl --fail-with-body --silent --show-error --request POST \
+            -H "Authorization: token $API_TOKEN" \
+            -H "accept: application/json" \
+            -H "Content-Type: application/json" \
+            --data "$payload" \
+            "${{ gitea.server_url }}/api/v1/repos/${{ gitea.repository }}/releases"
 
   # get_release_id:
   #   name: Get Release ID
