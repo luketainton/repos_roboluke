@@ -1,5 +1,3 @@
-# ruff: noqa: E402 pylint: disable=wrong-import-position
-
 """Provides test cases for app/utils/config.py."""
 
 import os

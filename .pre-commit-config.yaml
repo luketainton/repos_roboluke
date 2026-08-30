@@ -38,11 +38,6 @@ repos:
       - id: ruff # Run the linter.
         args: [--fix]
 
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:

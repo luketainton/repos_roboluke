@@ -16,7 +16,7 @@ def test_invalid() -> None:
     """Test timestamp_to_date() with an invalid timestamp."""
     allowed_errors: list[str] = [
         "'str' object cannot be interpreted as an integer",
-        "argument must be int or float, not str"
+        "argument must be int or float, not str",
     ]
     timestamp: str = "hello"
     with pytest.raises(TypeError) as excinfo:
