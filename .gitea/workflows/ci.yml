@@ -17,5 +17,7 @@ jobs:
       package-manager: uv
       python-version: '3.14'
       docker-enabled: true
-      sonarqube: false
+      sonarqube: true
       security-scan: false
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
