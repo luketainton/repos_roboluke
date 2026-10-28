@@ -1,4 +1,4 @@
-FROM python:3.15.1-slim
+FROM python:3.15.2-slim
 LABEL maintainer="Luke Tainton <luke@tainton.uk>"
 USER root
 
